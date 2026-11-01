@@ -22,7 +22,8 @@ cask "feather-ftp" do
   end
 
   # Signed + notarized Developer ID build; the Mac App Store .pkg is separate.
-  depends_on macos: ">= :catalina"
+  # No `depends_on macos:`: the app supports 10.15, older than any macOS
+  # Homebrew still runs on, and Homebrew 7 rejects `:catalina`.
 
   app "Feather FTP.app"
 
